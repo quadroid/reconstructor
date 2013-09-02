@@ -31,6 +31,7 @@ by Tarek Sherif
 ```javascript
     /// class
     var duck$ = {
+        constructor: reconstructor,
         name: "Duck",
         quack: function(){return "Quack!"}
     };
