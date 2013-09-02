@@ -1,7 +1,7 @@
 Reconstructor
 ========
 
-In this framework classic JS constructors used in defferent way. They are [object factories⠙][1].  
+In this framework classic JS constructors used in defferent way. They are [factory functions⠙][1].  
 
 
 [1]: http://ericleads.com/2013/01/javascript-constructor-functions-vs-factory-functions/
@@ -37,6 +37,21 @@ by Tarek Sherif
             return duck$.quack.call(this) + " My name is " + this.name + "!";
         }
     });
+    
+    /// multiple inheritance 
+    var flyable$ = {fly: Function()},
+        teleportable$ = {teleport: Function()};
+    //  by mixin
+    var superDuck$ = talkingDuck$.constructor(flyable$, teleportable$, {
+        name: "Super Duck"
+    });
+    //  by prototype chain
+    var superDuck$ = talkingDuck$
+        .constructor(flyable$)
+        .constructor(teleportable$)
+        .constructor({
+            name: "Super Duck"
+        });
     
     /// instantiation, forget about the `new` operator
     var donald = talkingDuck$.constructor({name: "Donald"});
