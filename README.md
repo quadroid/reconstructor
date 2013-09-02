@@ -1,15 +1,10 @@
 Reconstructor
 ========
 
-### Try the true prototype-based OOP
+In this framework classic JS constructors used in defferent way. They are [object factories⠙][1].  
 
-With this framework you can easilly create and manipulate objects without custom constructors, instead of classic js way,
-where you should define a constructor for every object (that you want to use as prototype), even if you didn't need it.
-It's possible to build and maintain extremely **large numbers of "classes" with comparatively little code**.
 
-**It's trivial to create new "classes"** - just clone (construct) the object and change a couple of properties and voila... new "class".
-
-**It's really class-free**: ConraJS produces objects (prototypes), not function-constructors, unlike all other class-producing tools (`Ext.define`, `dojo.declare` etc).
+[1]: http://ericleads.com/2013/01/javascript-constructor-functions-vs-factory-functions/
 
 Read more:
 
