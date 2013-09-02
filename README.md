@@ -53,6 +53,19 @@ by Tarek Sherif
             name: "Super Duck"
         });
     
+    /// private
+    function makeFlyable(){
+        var _action = "Flying...";
+        this.fly = function(){return this.name +": "+ _action};
+    }
+    function makeTeleportable(){
+        var _action = "Teleporting...";
+        this.teleport = function(){return this.name +": "+ _action};
+    }
+    var superDuck$ = talkingDuck$.constructor(makeFlyable, makeTeleportable, {
+        name: "Super Duck"
+    });
+    
     /// instantiation, forget about the `new` operator
     var donald = talkingDuck$.constructor({name: "Donald"});
     ///
