@@ -1,4 +1,4 @@
-ContraJS
+Reconstructor
 ========
 
 ### Try the true prototype-based OOP
