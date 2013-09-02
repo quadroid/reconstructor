@@ -25,7 +25,7 @@ by Tarek Sherif
 
 ```javascript
     /// class
-    var duck$ = {
+    var duck$ = {// posfix $ means prototype: duck$ === Duck.prototype
         constructor: reconstructor,
         name: "Duck",
         quack: function(){return "Quack!"}
