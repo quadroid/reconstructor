@@ -2,9 +2,11 @@ Reconstructor
 ========
 
 In this framework classic JS constructors used in defferent way. They are [factory functions⠙][1].  
-
+See [Fluent JavaScript – Three Different Kinds Of Prototypal OO⠙][2]
+<iframe src="//player.vimeo.com/video/69255635" width="500" height="281" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 [1]: http://ericleads.com/2013/01/javascript-constructor-functions-vs-factory-functions/
+[2]: http://ericleads.com/2013/02/fluent-javascript-three-different-kinds-of-prototypal-oo/
 
 Read more:
 
