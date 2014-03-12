@@ -1,7 +1,7 @@
 Reconstructor
 ========
 
-In this framework classic JS constructors used in defferent way. They are [factory functions⠙][1].  
+In this framework classic JS constructor used in different way. Now it is [factory function⠙][1].  
 See [Fluent JavaScript – Three Different Kinds Of Prototypal OO⠙][2]
 <iframe src="//player.vimeo.com/video/69255635" width="500" height="281" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
@@ -27,52 +27,51 @@ by Tarek Sherif
 
 ```javascript
     /// class
-    var duck$ = {// posfix $ means prototype: duck$ === Duck.prototype
+    var duck = {
         constructor: reconstructor,
         name: "Duck",
         quack: function(){return "Quack!"}
     };
     
     /// inheritance
-    var talkingDuck$ = duck$.constructor({
+    var talkingDuck = duck.constructor({
         quack: function(){
-            return duck$.quack.call(this) + " My name is " + this.name + "!";
+            return duck.quack.call(this) + " My name is " + this.name + "!";
         }
     });
     
     /// multiple inheritance 
-    var flyable$ = {fly: Function()},
-        teleportable$ = {teleport: Function()};
+    var flyable = {fly: Function()},
+        teleportable = {teleport: Function()};
     //  by mixin
-    var superDuck$ = talkingDuck$.constructor(flyable$, teleportable$, {
+    var superDuck = talkingDuck.constructor(flyable, teleportable, {
         name: "Super Duck"
     });
     //  by prototype chain
-    var superDuck$ = talkingDuck$
-        .constructor(flyable$)
-        .constructor(teleportable$)
+    var superDuck = talkingDuck
+        .constructor(flyable)
+        .constructor(teleportable)
         .constructor({
             name: "Super Duck"
         });
     
     /// private
     function makeFlyable(){
-        var _action = "Flying...";
-        this.fly = function(){return this.name +": "+ _action};
+        var action = "Flying...";
+        this.fly = function(){return this.name +": "+ action};
     }
     function makeTeleportable(){
-        var _action = "Teleporting...";
-        this.teleport = function(){return this.name +": "+ _action};
+        var action = "Teleporting...";
+        this.teleport = function(){return this.name +": "+ action};
     }
-    var superDuck$ = talkingDuck$.constructor(makeFlyable, makeTeleportable, {
+    var superDuck = talkingDuck.constructor(makeFlyable, makeTeleportable, {
         name: "Super Duck"
     });
     
     /// instantiation, forget about the `new` operator
-    var donald = talkingDuck$.constructor({name: "Donald"});
+    var donald = talkingDuck.constructor({name: "Donald"});
     ///
-    donald.quack() +" "+ duck$.isPrototypeOf(donald);
+    donald.quack() +" "+ duck.isPrototypeOf(donald);
 ```
 
 ----
-If you like the idea, plese look at the extended version of this framework www.github.com/quadroid/clonejs
